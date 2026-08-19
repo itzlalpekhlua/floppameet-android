@@ -79,7 +79,7 @@ import javax.net.ssl.SSLException;
 public class ConnectionsManager extends BaseController {
 
     private static final boolean FLOPPAMEET_MTPROTO_ENABLED = true;
-    private static final String FLOPPAMEET_MTPROTO_HOST = "94.249.138.14";
+    private static final String FLOPPAMEET_MTPROTO_HOST = "mt.mizodevelopment.com";
     private static final int FLOPPAMEET_MTPROTO_PORT = 2398;
 
     public final static int ConnectionTypeGeneric = 1;
