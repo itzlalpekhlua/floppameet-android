@@ -78,6 +78,10 @@ import javax.net.ssl.SSLException;
 
 public class ConnectionsManager extends BaseController {
 
+    private static final boolean FLOPPAMEET_MTPROTO_ENABLED = true;
+    private static final String FLOPPAMEET_MTPROTO_HOST = "94.249.138.14";
+    private static final int FLOPPAMEET_MTPROTO_PORT = 2398;
+
     public final static int ConnectionTypeGeneric = 1;
     public final static int ConnectionTypeDownload = 2;
     public final static int ConnectionTypeUpload = 4;
@@ -669,6 +673,9 @@ public class ConnectionsManager extends BaseController {
         }
 
         native_init(currentAccount, version, layer, apiId, deviceModel, systemVersion, appVersion, langCode, systemLangCode, configPath, logPath, regId, cFingerprint, installer, packageId, timezoneOffset, userId, userPremium, enablePushConnection, ApplicationLoader.isNetworkOnline(), ApplicationLoader.getCurrentNetworkType(), SharedConfig.measureDevicePerformanceClass());
+        if (FLOPPAMEET_MTPROTO_ENABLED) {
+            applyDatacenterAddress(2, FLOPPAMEET_MTPROTO_HOST, FLOPPAMEET_MTPROTO_PORT);
+        }
         checkConnection();
     }
 

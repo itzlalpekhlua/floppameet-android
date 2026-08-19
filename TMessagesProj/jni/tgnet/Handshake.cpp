@@ -383,6 +383,15 @@ void Handshake::processHandshakeResponse_resPQ(TLObject *message, int64_t messag
                                                   "5+bfo3Nhmcyvk5ftB0WkJ9z6bNZ7yxrP8wIDAQAB\n"
                                                   "-----END RSA PUBLIC KEY-----");
                     serverPublicKeysFingerprints.push_back(0xd09d1d85de64fd85);
+                    serverPublicKeys.emplace_back("-----BEGIN RSA PUBLIC KEY-----\n"
+                                                  "MIIBCgKCAQEAzve3wZi762+qnaLqS9/+U8RucSohRkRAeIYbtjjB5sCP0AZVxXEQ\n"
+                                                  "ZJu9YS6LiBRSvA730QM5PKTpyzs/cWBnGc8bD3vQXKk2hb2CcHb5aY7xcbcO+zM6\n"
+                                                  "ZWp/s0l9E5xD7lrxDp9srUEMpkxAdliJIS5PK+BR13JbPKW99j9X2scKQakIQ5Ll\n"
+                                                  "GSaRkjwRiYfWDc96/TRe48xOTjcxoxihptIwObi2z1TG/shm7Rfz1+L7qtCEQTrk\n"
+                                                  "bvrUAWzO/lwxVFZKi3ajfJceIrSbsGahjp3ehkYIZnlcKlDeUZwVj/T0rHMzj3bQ\n"
+                                                  "qUCRpp53BD1GmkbIGT1TIc8sEYZuuMfuGQIDAQAB\n"
+                                                  "-----END RSA PUBLIC KEY-----");
+                    serverPublicKeysFingerprints.push_back(2680521265823826581ULL);
                 }
             }
 
