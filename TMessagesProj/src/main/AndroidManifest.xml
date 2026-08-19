@@ -111,12 +111,17 @@
         android:usesCleartextTraffic="true"
         android:enableOnBackInvokedCallback="true"
     >
+        <activity
+            android:name="org.telegram.ui.floppa.FloppaMeetActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+
         <!-- usesCleartextTraffic for browser supporting opening http:// links -->
 
         <activity-alias
             android:enabled="true"
             android:name="org.telegram.messenger.DefaultIcon"
-            android:targetActivity="org.telegram.ui.LaunchActivity"
+            android:targetActivity="org.telegram.ui.floppa.FloppaMeetActivity"
             android:exported="true">
 
             <intent-filter>
