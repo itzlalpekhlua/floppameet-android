@@ -674,7 +674,12 @@ public class ConnectionsManager extends BaseController {
 
         native_init(currentAccount, version, layer, apiId, deviceModel, systemVersion, appVersion, langCode, systemLangCode, configPath, logPath, regId, cFingerprint, installer, packageId, timezoneOffset, userId, userPremium, enablePushConnection, ApplicationLoader.isNetworkOnline(), ApplicationLoader.getCurrentNetworkType(), SharedConfig.measureDevicePerformanceClass());
         if (FLOPPAMEET_MTPROTO_ENABLED) {
-            applyDatacenterAddress(2, FLOPPAMEET_MTPROTO_HOST, FLOPPAMEET_MTPROTO_PORT);
+            // FloppaMeet is a single physical backend. Telegram can open
+            // secondary DC connections for media and authorization transfer;
+            // route every standard DC label to the same MTProto service.
+            for (int dc = 1; dc <= 5; dc++) {
+                applyDatacenterAddress(dc, FLOPPAMEET_MTPROTO_HOST, FLOPPAMEET_MTPROTO_PORT);
+            }
         }
         checkConnection();
     }
